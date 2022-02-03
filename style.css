@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+/*SETUP*/
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, button{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: Roboto;
+}
+
+main {
+    padding-top: 3vh;
+    flex-grow: 1;
+}
+
+button {
+    padding: 1vh;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/*COLORS AND TYPOGRAPHY*/
+html {
+    --dark-blue: #1f2937;
+    --white: #f9faf8;
+}
+
+.big-text {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.small-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--dark-blue);
+}
+
+/*HEADER*/
+header {
+    background-color: var(--dark-blue);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.header-title {
+    text-align: center;
+}
+
+/*MAIN*/
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 98%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    height: 700px;
+    border: 3px solid black;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-draw, .btn-eraser, .btn-clear {
+    font-size: 1.1rem;
+}
+
+.size-text {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+/*FOOTER*/
+footer {
+    background-color: var(--dark-blue);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.footer-title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
