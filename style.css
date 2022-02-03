@@ -81,7 +81,7 @@ header {
     flex-wrap: wrap;
     width: 700px;
     height: 700px;
-    border: 3px solid black;
+    border: 2px solid var(--dark-blue);
 }
 
 .settings {
