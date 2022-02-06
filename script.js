@@ -32,7 +32,7 @@ function createNewGrid (gridSide) {
         const box = document.createElement("div");
         box.style.width = boxSize + "%";
         box.style.height = boxSize + "%";
-        box.onmouseenter = applySetting;
+        box.addEventListener("mouseenter", applySetting);
         grid.append(box);
     }
 }
@@ -46,23 +46,19 @@ function changeSizeOutput (gridSide) {
     sizeOutput.textContent = gridSide + " x " + gridSide;
 }
 
-grid.onmousedown = (e) => {
-    mouseDown = true;
-    e.preventDefault();
-};
-
-grid.onmouseup = () => mouseDown = false;
-
-btnDraw.addEventListener("click", () => setting = "draw");
-btnClear.addEventListener("click", () => updateGrid(currentGridSide));
-btnEraser.addEventListener("click", () => setting = "eraser");
-
-sizeSlider.oninput = (e) => {
+function applySliderSettings(e) {
     currentGridSide = e.target.value;
     updateGrid(currentGridSide);
     changeSizeOutput(currentGridSide);
-};
-
-window.onload = () => {
-    createNewGrid(currentGridSide);
 }
+
+grid.addEventListener("mousedown", (e) => {
+    mouseDown = true;
+    e.preventDefault();
+});
+grid.addEventListener("mouseup", () => mouseDown = false);
+btnDraw.addEventListener("click", () => setting = "draw");
+btnClear.addEventListener("click", () => updateGrid(currentGridSide));
+btnEraser.addEventListener("click", () => setting = "eraser");
+sizeSlider.addEventListener("input", applySliderSettings);
+window.addEventListener("load", () => createNewGrid(currentGridSide));
