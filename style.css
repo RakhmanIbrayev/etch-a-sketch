@@ -4,12 +4,10 @@
 * {
     box-sizing: border-box;
 }
-
 h1, h2, button{
     margin: 0;
     padding: 0;
 }
-
 body {
     display: flex;
     flex-direction: column;
@@ -17,20 +15,18 @@ body {
     margin: 0;
     font-family: Roboto;
 }
-
 main {
     padding-top: 3vh;
     flex-grow: 1;
 }
-
 button {
     padding: 1vh;
     border-radius: 8px;
     border: 1px solid black;
+    transition: all 200ms ease;
 }
-
 button:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 /*COLORS AND TYPOGRAPHY*/
@@ -38,14 +34,12 @@ html {
     --dark-blue: #1f2937;
     --white: #f9faf8;
 }
-
 .big-text {
     font-size: 2.2rem;
     font-weight: 900;
     line-height: 1.2;
     color: var(--white);
 }
-
 .small-text {
     font-size: 1.5rem;
     font-weight: 400;
@@ -53,13 +47,14 @@ html {
     color: var(--dark-blue);
 }
 
-/*HEADER*/
-header {
+/*COMMON STYLES*/
+header, footer {
     background-color: var(--dark-blue);
     padding-top: 2vh;
     padding-bottom: 2vh;
 }
 
+/*HEADER*/
 .header-title {
     text-align: center;
 }
@@ -75,37 +70,36 @@ header {
     margin-right: auto;
     padding: 10px;
 }
-
 .grid {
     display: flex;
     flex-wrap: wrap;
-    width: 700px;
+    width: 70%;
     height: 700px;
     border: 2px solid var(--dark-blue);
 }
-
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+    }
+    .grid {
+        width: 100%;
+        height: 500px;
+    }
+}
 .settings {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
 .btn-draw, .btn-eraser, .btn-clear {
     font-size: 1.1rem;
 }
-
 .size-text {
     text-align: center;
     font-size: 1.3rem;
 }
 
 /*FOOTER*/
-footer {
-    background-color: var(--dark-blue);
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-}
-
 .footer-title {
     text-align: center;
     font-size: 1.2rem;
